@@ -1,0 +1,20 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: encrypt-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      username: ${nacos.username}
+      password: ${nacos.password}
+      discovery:
+        server-addr: ${nacos.server}
+        enabled: true
+        namespace: ${nacos.discovery.server.namespace}
+      config:
+        server-addr: ${nacos.server}
+        file-extension: yaml
+        group: DEFAULT
+        namespace: ${nacos.config.server.namespace}
